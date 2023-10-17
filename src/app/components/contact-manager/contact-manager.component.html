@@ -1,1 +1,60 @@
-<p>contact-manager works!</p>
+<div class="container">
+    <h2 class="title">میدیریت مخاطبین</h2>
+    <p class="info">با استفاده از این اپ میتونید مخاطبین خود را مدیریت کنید از جمله پاک کردن اضافه کردن ادیت کردن و </p>
+</div>
+<!-- search btn and new btn-->
+<form class="container  fixings">
+    <input class="search-bar" type="search" placeholder="جست و جو کنید">
+    <input class="btn-submit" type="submit" value="جست و جو">
+    <a href="/contact/add" class="new-btn">جدید</a>
+</form>
+
+<!-- contacts-->
+<div class="contact-containers">
+
+
+<div class="cards-container">
+    <div class="cards-right">
+        <img class="cards-img" src="../../../assets/nima.jpg" alt="">
+    </div>
+    <div class="cards-middle">
+        <ul class="cards-list">
+            <li>اسم:<span>نیما احمدی</span></li>
+            <li>ایمیل:<span>nimaa.ahmadi.512@gmail.com</span></li>
+            <li>شماره:<span>09375707602</span></li>
+        </ul>
+    </div>
+    <div class="cards-left">
+        <a class="cards-btn  yellow">مشاهده</a>
+        <a class="cards-btn  green">تدوین</a>
+        <a class="cards-btn  red">حذف</a>
+    </div>
+</div>
+
+
+<div class="cards-container">
+    <div class="cards-right">
+        <img class="cards-img" src="../../../assets/nima.jpg" alt="">
+    </div>
+    <div class="cards-middle">
+        <ul class="cards-list">
+            <li>اسم:<span>نیما احمدی</span></li>
+            <li>ایمیل:<span>nimaa.ahmadi.512@gmail.com</span></li>
+            <li>شماره:<span>09375707602</span></li>
+        </ul>
+    </div>
+    <div class="cards-left">
+        <a class="cards-btn  yellow" routerLink="/contact/view/contactId">مشاهده</a>
+        <a class="cards-btn  green" routerLink="/contact/edit/contactId">تدوین</a>
+        <a class="cards-btn  red"   >حذف</a>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+
+

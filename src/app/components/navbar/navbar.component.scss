@@ -1,2 +1,25 @@
+.nav-container {
+    width: 100%;
+    max-width: 80%;
+    height: 4rem;
+    margin: 0.7rem auto;
+    background-color: rgba(41, 91, 109, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 1px 5px 8px rgba(36, 72, 85, 0.5);
 
 
+}
+
+.nav-brand {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+
+.logo {
+    margin-left: 2rem;
+    width: 3rem;
+}
