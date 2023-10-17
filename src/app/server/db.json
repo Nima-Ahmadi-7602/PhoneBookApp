@@ -1,0 +1,76 @@
+{
+    "contacts": [
+        {
+            "id": "001",
+            "name": "نیما احمدی",
+            "email": "nimaa.ahmadi.512@gmail.com",
+            "photo": "001",
+            "company": " ماهرافزار",
+            "title": "نیما",
+            "address": "پیروزی",
+            "groupId": "3"
+        },
+        {
+            "id": "002",
+            "name": "امیر احمدی",
+            "email": "amir.ahmadi.512@gmail.com",
+            "photo": "001",
+            "company": "نامعلوم",
+            "title": "امیر",
+            "address": "پیروزی",
+            "groupId": "2"
+        },
+        {
+            "id": "003",
+            "name": " امین ترابیان",
+            "email": "amin.torab@gmail.com",
+            "photo": "001",
+            "company": "گمرک",
+            "title": "ترابیان",
+            "address": "پیروزی",
+            "groupId": "1"
+        },
+        {
+            "id": "004",
+            "name": "مهدی نورانی",
+            "email": "mahdi@gmail.com",
+            "photo": "001",
+            "company": "فیلیمو",
+            "title": "نورانی",
+            "address": "امام حسین ",
+            "groupId": "4"
+        }
+    ],
+    "groups": [
+        {
+            "id":"1",
+            "name":"دوست"
+
+        },
+        {
+            "id":"2",
+            "name":"خانواده"
+
+        },
+        {
+            "id":"3",
+            "name":"همکار"
+
+        },
+        {
+            "id":"4",
+            "name":"خدمات"
+
+        },
+        {
+            "id":"5",
+            "name":"همکلاسی"
+
+        },
+        {
+            "id":"4",
+            "name":"غیره"
+
+        }
+    ]
+}
