@@ -10,8 +10,8 @@ const routes: Routes = [
   {path:'' , redirectTo:'contact/admin' , pathMatch:'full'},
   {path:'contact/admin' , component:ContactManagerComponent},
   {path:'contact/add' , component:AddContactComponent},
-  {path:'contact/edit/contactId' , component:EditContactComponent},
-  {path:'contact/view/contactId' , component:ViewContactComponent},
+  {path:'contact/edit/:contactId' , component:EditContactComponent},
+  {path:'contact/view/:contactId' , component:ViewContactComponent},
   {path:'**' , component:PageNotFoundComponent},
 
 ];

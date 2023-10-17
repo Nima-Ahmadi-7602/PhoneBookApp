@@ -4,26 +4,22 @@
     <a routerLink="/" class="view-back">بارگشت</a>
 </div>
 
-<div class="view-container">
+
+
+
+<div class="view-container" *ngIf="!loading  && isNotEmpty()">
     <div class="view-pic">
-        <img class="view-img" src="../../../assets/nima.jpg" alt="">
+        <img class="view-img" [src]="contact.photo" alt="">
     </div>
     <div class="view-info">
         <ul class="cards-list">
-            <li>اسم:<span>نیما احمدی</span></li>
-            <li>ایمیل:<span>nimaa.ahmadi.512@gmail.com</span></li>
-            <li>شماره:<span>09375707602</span></li>
-            <li>شرکت:<span>ماهر افزار</span></li>
-            <li>عنوان:<span> احمدی</span></li>
-            <li>گروه:<span>کارمند</span></li>
+            <li>اسم:<span>{{contact.name}}</span></li>
+            <li>ایمیل:<span>{{contact.email}}</span></li>
+            <li>شماره:<span>{{contact.mobile}}</span></li>
+            <li>شرکت:<span>{{contact.company}}</span></li>
+            <li>عنوان:<span>{{contact.title}}</span></li>
+            <li>گروه:<span>{{group.name}}</span></li>
         </ul>
     </div>
-  
+
 </div>
-
-
-
-
-
-
-

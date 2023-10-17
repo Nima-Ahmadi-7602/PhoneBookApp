@@ -21,7 +21,7 @@ export class ContactManagerComponent implements OnInit {
    },  (error) => {
      this.errorMessage = error;
      this.loading = false;
-   }); 
+   });
   }
 
 }

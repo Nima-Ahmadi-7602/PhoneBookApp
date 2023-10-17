@@ -11,12 +11,17 @@
 </form>
 
 
-<!-- contacts-->
+<!-- loading-->
 
-<div></div>
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
 
 
-<!-- contacts-->
+<!-- error-->
+<div *ngIf="!loading && errorMessage">
+<h2>{{errorMessage}}</h2>
+</div>
 
 
 <!-- contacts-->
@@ -36,8 +41,8 @@
                 </ul>
             </div>
             <div class="cards-left">
-                <a class="cards-btn  yellow" routerLink="/contact/view/contactId">مشاهده</a>
-                <a class="cards-btn  green" routerLink="/contact/edit/contactId">تدوین</a>
+                <a class="cards-btn  yellow" routerLink="/contact/view/{{contact.id}}">مشاهده</a>
+                <a class="cards-btn  green" routerLink="/contact/edit/{{contact.id}}">تدوین</a>
                 <a class="cards-btn  red">حذف</a>
             </div>
         </div>

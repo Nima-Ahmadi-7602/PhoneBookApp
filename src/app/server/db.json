@@ -1,7 +1,7 @@
 {
     "contacts": [
         {
-            "id": "001",
+            "id": "one",
             "name": "نیما احمدی",
             "email": "nimaa.ahmadi.512@gmail.com",
             "mobile":"09375707602",
@@ -12,10 +12,10 @@
             "groupId": "3"
         },
         {
-            "id": "002",
+            "id": "two",
             "name": "امیر احمدی",
             "email": "amir.ahmadi.512@gmail.com",
-            "mobile":"09367408486",
+            "mobile":"093674087",
             "photo": "../../../assets/nima.jpg",
             "company": "نامعلوم",
             "title": "امیر",
@@ -23,7 +23,7 @@
             "groupId": "2"
         },
         {
-            "id": "003",
+            "id": "tree",
             "name": " امین ترابیان",
             "email": "amin.torab@gmail.com",
             "mobile":"091254756478",
@@ -34,7 +34,7 @@
             "groupId": "1"
         },
         {
-            "id": "004",
+            "id": "four",
             "name": "مهدی نورانی",
             "email": "mahdi@gmail.com",
             "mobile":"012909024658",
@@ -49,32 +49,26 @@
         {
             "id":"1",
             "name":"دوست"
-
         },
         {
             "id":"2",
             "name":"خانواده"
-
         },
         {
             "id":"3",
             "name":"همکار"
-
         },
         {
             "id":"4",
             "name":"خدمات"
-
         },
         {
             "id":"5",
             "name":"همکلاسی"
-
         },
         {
             "id":"4",
             "name":"غیره"
-
         }
     ]
 }
