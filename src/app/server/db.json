@@ -10,6 +10,16 @@
       "title": "نیما",
       "groupId": "2",
       "id": 1
+    },
+    {
+      "name": "سینا باقری",
+      "photo": "../../../assets/nima.jpg",
+      "email": "sina@gmail.com",
+      "mobile": 9375705646,
+      "company": "نامعلوم",
+      "address": "یسشی",
+      "title": "سینا",
+      "id": 2
     }
   ],
   "groups": [

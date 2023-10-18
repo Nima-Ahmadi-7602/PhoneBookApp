@@ -11,6 +11,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     EditContactComponent,
     ViewContactComponent,
     SpinnerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

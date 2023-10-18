@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { IContact } from 'src/app/models/IContact';
 import { ContactService } from 'src/app/services/contact.service';
 
@@ -11,6 +11,8 @@ export class ContactManagerComponent implements OnInit {
   public loading: boolean = false;
   public contacts: IContact[] = [];
   public errorMessage: string | null = null;
+
+
 
   constructor(private ContactService: ContactService) { }
   ngOnInit(): void {
@@ -27,7 +29,7 @@ export class ContactManagerComponent implements OnInit {
       this.loading = false;
     });
   }
-  public clickDeleteContact(contactId:  any) {
+  public clickDeleteContact(contactId: any) {
     if (contactId) {
       this.ContactService.deleteContact(contactId).subscribe((data) => {
         this.getAllContactsFromServer();
@@ -35,5 +37,10 @@ export class ContactManagerComponent implements OnInit {
         this.errorMessage = error;
       });
     }
+  }
+  searchText: string = '';
+
+  onsearchTextEntered(searchValue: string) {
+    this.searchText = searchValue 
   }
 }
