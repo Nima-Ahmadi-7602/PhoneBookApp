@@ -3,27 +3,26 @@
     <p class="info">در این بخش میتونید تدوین اضافه کنید با پر کردن اطلاعات زیر و فشردن دکمه ثبت </p>
 </div>
 
-
-<form class="add-container  ">
+<form class="add-container" (submit)="updateSubmit()" >
    
     <div class="form-container ">
-        <img class="add-img" src="../../../assets/nima.jpg" alt="">
+        <img class="add-img" [src]="contact.photo" alt="">
 
-        <input class="search-bar name" type="text" placeholder="نام">
-        <input class="search-bar " type="text" placeholder="عکس">
-        <input class="search-bar" type="text" placeholder="ایمیل">
-        <input class="search-bar" type="number" placeholder="شماره">
-        <input class="search-bar" type="text" placeholder="شرکت">
-        <input class="search-bar" type="title" placeholder="عنوان">
-        <select class="search-bar">
+        <input required="true"  [(ngModel)]="contact.name" name="name"  [value]="contact.name"  class="search-bar name" type="text" placeholder="نام">
+        <input required="true" [(ngModel)]="contact.photo" name="photo"  [value]="contact.photo" class="search-bar " type="text" placeholder="عکس">
+        <input required="true" [(ngModel)]="contact.email" name="email"  [value]="contact.email" class="search-bar" type="text" placeholder="ایمیل">
+        <input required="true" [(ngModel)]="contact.mobile" name="mobile"  [value]="contact.mobile" class="search-bar" type="number" placeholder="شماره">
+        <input required="true" [(ngModel)]="contact.company" name="company"  [value]="contact.company" class="search-bar" type="text" placeholder="شرکت">
+        <input required="true" [(ngModel)]="contact.address" name="address"  [value]="contact.address" class="search-bar" type="text" placeholder="آدرس">
+        <input required="true"  [(ngModel)]="contact.title" name="title" [value]="contact.title" class="search-bar" type="title" placeholder="عنوان">
+        <select required="true" [(ngModel)]="contact.groupId" name="groupId" [value]="contact.groupId" class="search-bar" *ngIf="groups.length > 0 ">
             <option value="">انتخاب گروه</option>
+            <option [value]="group.id" *ngFor="let group of groups"> {{group.name}}</option>
         </select>
         <input class="search-bar" type="submit" placeholder="ثبت">
         <a routerLink="/">بارگشت</a>
     </div>
     
- 
-
-
 
 </form>
+    

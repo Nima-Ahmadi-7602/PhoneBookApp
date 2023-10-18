@@ -6,6 +6,7 @@ import { EditContactComponent } from './components/edit-contact/edit-contact.com
 import { ViewContactComponent } from './components/view-contact/view-contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
 const routes: Routes = [
   {path:'' , redirectTo:'contact/admin' , pathMatch:'full'},
   {path:'contact/admin' , component:ContactManagerComponent},

@@ -43,7 +43,7 @@
             <div class="cards-left">
                 <a class="cards-btn  yellow" routerLink="/contact/view/{{contact.id}}">مشاهده</a>
                 <a class="cards-btn  green" routerLink="/contact/edit/{{contact.id}}">تدوین</a>
-                <a class="cards-btn  red">حذف</a>
+                <a class="cards-btn  red" (click)="clickDeleteContact(contact.id)">حذف</a>
             </div>
         </div>
 
