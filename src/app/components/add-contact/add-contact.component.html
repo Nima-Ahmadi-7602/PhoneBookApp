@@ -12,6 +12,7 @@
             formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
         <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
             <div *ngIf="f['name'].errors['required']">Fullname is required</div>
+            <div *ngIf="f['name'].errors['maxLength']">max is required</div>
         </div>
 
 
@@ -19,35 +20,34 @@
             formControlName="photo">
 
         <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" placeholder="ایمیل"
-            formControlName="email"    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
-            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-              <div *ngIf="f['email'].errors['required']">ایمیل وارد نشده</div>
-              <div *ngIf="f['email'].errors['email']">ایمیل فرمت درست نداره</div>
-              <div *ngIf="f['email'].errors['pattern']">ایمیل فرمت درست نداره 2</div>
-            </div>
+            formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">ایمیل وارد نشده</div>
+            <div *ngIf="f['email'].errors['email']">ایمیل فرمت درست نداره</div>
+        </div>
 
 
         <input [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="number" placeholder="شماره"
             formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
-            <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
-                <div *ngIf="f['mobile'].errors['required']">شماره وارد نشده</div>
-                <div *ngIf="f['mobile'].errors['maxLength']">
-                    شماره یازده رقم
-                </div>
+        <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+            <div *ngIf="f['mobile'].errors['required']">شماره وارد نشده</div>
+            <div *ngIf="f['mobile'].errors['maxLength']">
+                شماره یازده رقم
             </div>
+        </div>
 
 
         <input [(ngModel)]="contact.title" name="title" class="search-bar" type="title" placeholder="عنوان"
             formControlName="title" [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" />
-            <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
-                <div *ngIf="f['title'].errors['required']">Usme is required</div>
-                <div *ngIf="f['title'].errors['minlength']">
-                    Ussme must be at least 6 characters
-                </div>
-                <div *ngIf="f['title'].errors['maxlength']">
-                    Ussame must not exceed 20 characters
-                </div>
+        <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
+            <div *ngIf="f['title'].errors['required']">Usme is required</div>
+            <div *ngIf="f['title'].errors['minlength']">
+                Ussme must be at least 6 characters
             </div>
+            <div *ngIf="f['title'].errors['maxlength']">
+                Ussame must not exceed 20 characters
+            </div>
+        </div>
 
         <input [(ngModel)]="contact.address" name="address" class="search-bar" type="text" placeholder="آدرس"
             formControlName="address" [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />

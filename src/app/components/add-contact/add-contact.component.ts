@@ -31,15 +31,15 @@ export class AddContactComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        name: ['', Validators.required, Validators.maxLength(30)],
+        name: ['', [Validators.required, Validators.maxLength(30)]],
         mobile: [
           '',
           [
             Validators.required,
-            Validators.maxLength(11)          
+            Validators.maxLength(11)
           ]
         ],
-        email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
+        email: ['', [Validators.required,Validators.email]],
         title: [
           '',
           [
@@ -69,20 +69,16 @@ export class AddContactComponent implements OnInit {
 
     if (this.form.invalid) {
       return;
-    }else{    this.contactService.createContact(this.contact).subscribe((data) => {
-      this.router.navigate(['/']).then();
-    }, (error) => {
-      this.errorMessage = error;
-      this.router.navigate(['/contact/add']).then();
-    });
+    } else {
+      this.contactService.createContact(this.contact).subscribe((data) => {
+        this.router.navigate(['/']).then();
+      }, (error) => {
+        this.errorMessage = error;
+        this.router.navigate(['/contact/add']).then();
+      })
 
     }
 
     console.log(JSON.stringify(this.form.value, null, 2));
-  }
-
-  onReset(): void {
-    this.submitted = false;
-    this.form.reset();
   }
 }

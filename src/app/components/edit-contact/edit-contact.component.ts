@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IContact } from 'src/app/models/IContact';
 import { ContactService } from 'src/app/services/contact.service';
@@ -14,9 +15,48 @@ export class EditContactComponent implements OnInit {
   public contact: IContact = {} as IContact;
   public errorMessage: string | null = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router) { }
+
+  form: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    mobile: new FormControl(''),
+    title: new FormControl(''),
+    address: new FormControl(''),
+  });
+  submitted = false;
+
+  constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group(
+      {
+        name: ['', [Validators.required, Validators.maxLength(30)]],
+        mobile: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(11)
+          ]
+        ],
+        email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
+        title: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(30)
+          ]
+        ],
+        address: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(50)
+          ]
+        ],
+      }
+    );
     this.loading = true;
     this.activatedRoute.paramMap.subscribe((param) => {
       this.contactId = param.get('contactId');
@@ -32,15 +72,24 @@ export class EditContactComponent implements OnInit {
     }
   }
 
-  public updateSubmit() {
-    if (this.contactId  ) {
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  public updateSubmit(): void {
+    this.submitted = true;
+
+    if (this.form.invalid) {
+      return;
+    } else if (this.contactId) {
       this.contactService.updateContact(this.contact, this.contactId).subscribe((data) => {
         this.router.navigate(['/']).then();
       }, (error) => {
         this.errorMessage = error;
         this.router.navigate(['/contact/edit/${this.contactId}']).then();
-
       });
     }
+    console.log(JSON.stringify(this.form.value, null, 2));
   }
 }
+
