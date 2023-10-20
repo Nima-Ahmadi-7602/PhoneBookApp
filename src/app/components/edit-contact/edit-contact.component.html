@@ -9,16 +9,12 @@
         <img class="add-img" [src]="contact.photo" alt="">
 
         <input required="true"  [(ngModel)]="contact.name" name="name"  [value]="contact.name"  class="search-bar name" type="text" placeholder="نام">
-        <input required="true" [(ngModel)]="contact.photo" name="photo"  [value]="contact.photo" class="search-bar " type="text" placeholder="عکس">
+        <input required="true" [(ngModel)]="contact.photo" name="photo"  [value]="contact.photo" class="search-bar " type="file" placeholder="عکس">
         <input required="true" [(ngModel)]="contact.email" name="email"  [value]="contact.email" class="search-bar" type="text" placeholder="ایمیل">
         <input required="true" [(ngModel)]="contact.mobile" name="mobile"  [value]="contact.mobile" class="search-bar" type="number" placeholder="شماره">
-        <input required="true" [(ngModel)]="contact.company" name="company"  [value]="contact.company" class="search-bar" type="text" placeholder="شرکت">
-        <input required="true" [(ngModel)]="contact.address" name="address"  [value]="contact.address" class="search-bar" type="text" placeholder="آدرس">
         <input required="true"  [(ngModel)]="contact.title" name="title" [value]="contact.title" class="search-bar" type="title" placeholder="عنوان">
-        <select required="true" [(ngModel)]="contact.groupId" name="groupId" [value]="contact.groupId" class="search-bar" *ngIf="groups.length > 0 ">
-            <option value="">انتخاب گروه</option>
-            <option [value]="group.id" *ngFor="let group of groups"> {{group.name}}</option>
-        </select>
+        <input required="true" [(ngModel)]="contact.address" name="address"  [value]="contact.address" class="search-bar" type="text" placeholder="آدرس">
+      
         <input class="search-bar" type="submit" placeholder="ثبت">
         <a routerLink="/">بارگشت</a>
     </div>

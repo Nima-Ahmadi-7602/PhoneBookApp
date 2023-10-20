@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { IContact } from '../models/IContact';
-import { IGroup } from '../models/IGroup';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,17 +39,6 @@ export class ContactService {
     let dataUrl: string = `${this.serverUrl}/contacts/${contactId}`;
     return this.HttpClient.delete<{}>(dataUrl).pipe(catchError(this.handleError));
   }
-
-  //get all groups
-    public getAllGroups(): Observable<IGroup[]> {
-    let dataUrl: string = `${this.serverUrl}/groups`;
-    return this.HttpClient.get<IGroup[]>(dataUrl).pipe(catchError(this.handleError));
-  }
-    //get single goup
-    public getGroup(contact: IContact): Observable<IGroup> {
-      let dataUrl: string = `${this.serverUrl}/groups/${contact.groupId}`;
-      return this.HttpClient.get<IGroup>(dataUrl).pipe(catchError(this.handleError));
-    }
 
 
   //errorhandeling

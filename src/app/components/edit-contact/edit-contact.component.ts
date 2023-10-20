@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IContact } from 'src/app/models/IContact';
-import { IGroup } from 'src/app/models/IGroup';
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class EditContactComponent implements OnInit {
   public contactId: string | null = null;
   public contact: IContact = {} as IContact;
   public errorMessage: string | null = null;
-  public groups: IGroup[] = [] as IGroup[];
 
   constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router) { }
 
@@ -27,10 +25,6 @@ export class EditContactComponent implements OnInit {
       this.contactService.getContact(this.contactId).subscribe((data) => {
         this.contact = data;
         this.loading = false;
-        this.contactService.getAllGroups().subscribe((data) => {
-          this.groups = data;
-        });
-
       }, (error) => {
         this.errorMessage = error;
         this.loading = false;
