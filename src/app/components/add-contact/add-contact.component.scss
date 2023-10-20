@@ -6,7 +6,6 @@
     align-items: center;
     margin-bottom: 3rem;
 
-
 }
 
 .title {
@@ -51,4 +50,15 @@
     width: 15rem;
     height: 15rem;
     border-radius: 10rem;
+}
+
+.is-invalid {
+    z-index: 100;
+    color: RED;
+    border: red;
+}
+.is-valid{
+    z-index: 100;
+    color: green;
+    border: green;
 }
