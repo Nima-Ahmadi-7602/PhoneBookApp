@@ -36,22 +36,19 @@ export class AddContactComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.maxLength(11)
+            Validators.pattern("[0-9 ]{11}")
           ]
         ],
         email: ['', [Validators.required, Validators.email]],
         title: [
           '',
           [
-            Validators.required,
-            Validators.minLength(3),
             Validators.maxLength(30)
           ]
         ],
         address: [
           '',
           [
-            Validators.required,
             Validators.minLength(6),
             Validators.maxLength(50)
           ]

@@ -1,11 +1,82 @@
-.label-container{
+@import '../../../styles.scss';
+
+.label-container {
     margin-top: 0.5rem;
+    gap: 0.5rem;
     display: flex;
     align-items: center;
 }
-.svg{
+
+.svg {
     width: 1.5rem;
 }
-p{
+
+.header-svg {
+    width: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 700;
     color: white;
+}
+
+.add-container {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-container {
+    width: 100%;
+    max-width: 35%;
+}
+
+.search-bar {
+    width: 100%;
+    border-radius: $border-radius-md;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.btn-container {
+    width: 100%;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+
+}
+
+.submit-btn {
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 15rem;
+    background-color: $green-color;
+    height: 4rem;
+    border-radius: $border-radius-md;
+
+}
+
+.back-btn {
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 15rem;
+    height: 4rem;
+    border-radius: $border-radius-md;
+    background-color: $header-color ;
+}
+
+.is-invalid {
+    color: $red-color;
+    margin: 0.5rem 0;
+
 }

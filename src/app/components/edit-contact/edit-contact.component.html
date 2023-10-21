@@ -1,72 +1,88 @@
 <div class="head">
     <div class="head-div">
-        <img src="../../../assets/icons/edit.svg">
+        <img src="../../../assets/icons/edit1.svg">
         <h2 class="head-title">تدوین</h2>
     </div>
     <p class="head-info">در این بخش میتوانید مشخصات کاربر را تدوین کنید</p>
 </div>
 
+
+
+
+
 <form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
     <div class="form-container ">
-        <img class="add-img" [src]="contact.photo" >
+        <img class="add-img" [src]="contact.photo">
+        <input [(ngModel)]="contact.photo" name="photo" class="search-bar" type="text" formControlName="photo" />
 
 
 
-        <input [value]="contact.name" [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" 
-            formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" >
-        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
-            <div *ngIf="f['name'].errors['required']">Fullname is required</div>
-            <div *ngIf="f['name'].errors['maxLength']">max is required</div>
+        <div class="label-container">
+            <img src="../../../assets/icons/badge1.svg" class="svg">
+            <p>نام:</p>
         </div>
-
-
-        <input  [(ngModel)]="contact.photo" name="photo" class="search-bar " type="text" 
-            formControlName="photo">
-
-        <input  [value]="contact.email" [(ngModel)]="contact.email" name="email" class="search-bar" type="email" 
-            formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" >
-        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <input [(ngModel)]="contact.name" name="name" class="search-bar" type="text" formControlName="name" placeholder="نام را وارد کنید "
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+        <div *ngIf="submitted && f['name'].errors" class="is-invalid">
+            <div *ngIf="f['name'].errors['required']"> نام را وارد نکردید </div>
+            <div *ngIf="f['name'].errors['maxLength']">اسم طولانی است </div>
+        </div>
+        <div class="label-container">
+            <img src="../../../assets/icons/mail1.svg" class="svg">
+            <p>ایمیل:</p>
+        </div>
+        <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" formControlName="email" placeholder="ایمیل با فرمت درست وارد شود (example@google.com)"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        <div *ngIf="submitted && f['email'].errors" class="is-invalid">
             <div *ngIf="f['email'].errors['required']">ایمیل وارد نشده</div>
             <div *ngIf="f['email'].errors['email']">ایمیل فرمت درست نداره</div>
-            <div *ngIf="f['email'].errors['pattern']">ایمیل فرمت درست نداره 2</div>
         </div>
-
-
-        <input  [value]="contact.mobile" [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="number" 
-            formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" >
-        <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+        <div class="label-container">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="svg">
+            <p>شماره:</p>
+        </div>
+        <input [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="text" formControlName="mobile" placeholder="شماره تلفن یازده رقم باید باشد..."
+            [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
+        <div *ngIf="submitted && f['mobile'].errors" class="is-invalid">
             <div *ngIf="f['mobile'].errors['required']">شماره وارد نشده</div>
-            <div *ngIf="f['mobile'].errors['minLength']">
-                شماره یازده رقم
+            <div *ngIf="f['mobile'].errors['pattern']">
+                شماره یازده رقم نیست
             </div>
+         
         </div>
-
-
-        <input  [value]="contact.title" [(ngModel)]="contact.title" name="title" class="search-bar" type="title" 
-            formControlName="title" [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" >
-        <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
-            <div *ngIf="f['title'].errors['required']">Usme is required</div>
-            <div *ngIf="f['title'].errors['minlength']">
-                Ussme must be at least 6 characters
-            </div>
+        <div class="label-container">
+            <img src="../../../assets/icons/feed1.svg" class="svg">
+            <p>عنوان:</p>
+        </div>
+        <input [(ngModel)]="contact.title" name="title" class="search-bar" type="title" formControlName="title" placeholder="عنوان فرد مثلا(دوست، همکار ، تعمیرکار یا نام مستعار فرد)"
+            [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" /> 
+        <div *ngIf="submitted && f['title'].errors" class="is-invalid">
             <div *ngIf="f['title'].errors['maxlength']">
-                Ussame must not exceed 20 characters
+                عنوان طولانی است
             </div>
         </div>
-
-        <input  [value]="contact.address" [(ngModel)]="contact.address" name="address" class="search-bar" type="text" 
-            formControlName="address" [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" >
-        <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
-            <div *ngIf="f['address'].errors['required']">Usme is required</div>
+        <div class="label-container">
+            <img src="../../../assets/icons/home1.svg" class="svg">
+            <p>آدرس:</p>
+        </div>
+        <input [(ngModel)]="contact.address" name="address" class="search-bar" type="text" formControlName="address" placeholder="آدرس  را وارد کنید "
+            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />
+        <div *ngIf="submitted && f['address'].errors" class="is-invalid">
             <div *ngIf="f['address'].errors['minlength']">
-                Ussme must be at least 6 characters
+                آدرس کوتاه است
             </div>
             <div *ngIf="f['address'].errors['maxlength']">
-                Ussame must not exceed 20 characters
+               آدرس طولانی است
             </div>
         </div>
-
-        <input class="search-bar" type="submit" placeholder="ثبت">
-        <a routerLink="/">بارگشت</a>
+        <br>
+        <div class="btn-container">
+            <div class="btn-align">
+                <button class="submit-btn" type="submit">ثبت</button>
+            </div>
+            <div class="btn-align">
+                <button routerLink="/" class="back-btn">بارگشت</button>
+            </div>
+        </div>
     </div>
 </form>
