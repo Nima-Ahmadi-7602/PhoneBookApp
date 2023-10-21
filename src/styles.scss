@@ -3,19 +3,13 @@
 @import '../src/app/scss/variables';
 @import '../src/app/scss/mixins';
 @font-face {
-    font-family: 'mikhak';
+    font-family: 'mikhak' , sans-serif;
     font-weight: 500;
     src: url('assets/fonts/mikhak-medium-webfont.woff2')format('woff2'),
     url('assets/fonts/mikhak-medium-webfont.woff')format('woff')   
 }
-@font-face {
-    font-family: 'mikhak-thin';
-    font-weight: 700;
-    src: url('assets/fonts/mikhak-thin-webfont.woff2')format('woff2'),
-    url('assets/fonts/mikhak-thin-webfont.woff')format('woff')   
-}
-
 body {
+    height: 120vh;
     background-color: $bg-color;
 }
 
@@ -32,10 +26,13 @@ body {
     }
 
     #{&}-title {
-        font-family: 'mikhak-thin'sans-serif;
+        font-family: 'mikhak' , sans-serif;
+
         font-size: $text-size-lg ;
     }
     #{&}-info {
+        
+        font-family: 'mikhak' , sans-serif;
         font-size: $text-size-md ;
     }
 

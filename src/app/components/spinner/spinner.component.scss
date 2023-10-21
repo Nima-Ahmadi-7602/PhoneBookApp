@@ -1,7 +1,5 @@
+@import '../../../styles.scss';
 .spinner-container{
-    width: 100%;
-    max-width: 80%;
-    justify-content: center;
+    @include flexCenter;
     margin: 5rem auto;
-    direction: rtl;
 }

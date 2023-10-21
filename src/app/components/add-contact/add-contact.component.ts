@@ -16,7 +16,6 @@ export class AddContactComponent implements OnInit {
   public errorMessage: string | null = null;
 
   form: FormGroup = new FormGroup({
-    photo: new FormControl(''),
     name: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),

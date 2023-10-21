@@ -8,7 +8,6 @@
 }
 
 .search-bar {
-
   font-size: 1.3rem;
   border-radius: $border-radius-md;
   border-style: none;
@@ -19,7 +18,7 @@
   transition: all 0.5s;
 
   &:focus {
-    width: 55rem;
+    width: 58rem;
   }
 
   &::placeholder {

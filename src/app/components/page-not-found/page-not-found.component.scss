@@ -1,12 +1,9 @@
+@import '../../../styles.scss';
 
-.container{
-    width: 100vw;
-    height: 100vh;
+.pnf-container {
+    @include flexCenter;
 }
+
 .page-alert {
-    display: inline;
-  
-    position: relative;
-    top: 50vh;
-    left: 40vw;
+    font-size: 5rem;
 }

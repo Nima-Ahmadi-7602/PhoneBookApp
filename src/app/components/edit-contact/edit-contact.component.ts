@@ -28,6 +28,19 @@ export class EditContactComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.loading = true;
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.contactId = param.get('contactId');
+    });
+    if (this.contactId) {
+      this.contactService.getContact(this.contactId).subscribe((data) => {
+        this.contact = data;
+        this.loading = false;
+      }, (error) => {
+        this.errorMessage = error;
+        this.loading = false;
+      })
+    }
     this.form = this.formBuilder.group(
       {
         name: ['', [Validators.required, Validators.maxLength(30)]],
@@ -56,20 +69,7 @@ export class EditContactComponent implements OnInit {
           ]
         ],
       }
-    );
-    this.loading = true;
-    this.activatedRoute.paramMap.subscribe((param) => {
-      this.contactId = param.get('contactId');
-    });
-    if (this.contactId) {
-      this.contactService.getContact(this.contactId).subscribe((data) => {
-        this.contact = data;
-        this.loading = false;
-      }, (error) => {
-        this.errorMessage = error;
-        this.loading = false;
-      })
-    }
+    )
   }
 
   get f(): { [key: string]: AbstractControl } {
