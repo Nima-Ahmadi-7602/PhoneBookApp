@@ -1,6 +1,9 @@
-<div class="container">
-    <h2 class="title">افزودن کاربر جدید </h2>
-    <p class="info">در این بخش میتونید کاربر جدید اضافه کنید با پر کردن اطلاعات زیر و فشردن دکمه ثبت </p>
+<div class="head">
+    <div class="head-div">
+        <img src="../../../assets/icons/edit.svg">
+        <h2 class="head-title">افزودن کاربر جدید</h2>
+    </div>
+    <p class="head-info">در این بخش میتوانید کاربر جدیدی رو به لیست کاربران اضافه کنید</p>
 </div>
 <form class="add-container " [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-container ">
@@ -8,12 +11,15 @@
 
 
         <input [(ngModel)]="contact.photo" name="photo" class="search-bar " type="text" placeholder="عکس"
-            formControlName="photo"   [ngClass]="{ 'is-invalid': submitted && f['photo'].errors }" />
-            <div *ngIf="submitted && f['photo'].errors" class="invalid-feedback">
-                <div *ngIf="f['photo'].errors['required']">Fullname is required</div>
-            </div>
+            formControlName="photo"  />
+          
 
-        <input [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" placeholder="نام"
+
+        <div class="label-container">
+            <img src="../../../assets/icons/badge1.svg" class="svg">
+            <p>نام:</p>
+        </div>
+        <input [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" 
             formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
         <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
             <div *ngIf="f['name'].errors['required']">Fullname is required</div>
@@ -22,6 +28,10 @@
 
 
 
+        <div class="label-container">
+            <img src="../../../assets/icons/mail1.svg" class="svg">
+            <p>ایمیل:</p>
+        </div>
         <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" placeholder="ایمیل"
             formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
         <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
@@ -30,6 +40,12 @@
         </div>
 
 
+
+
+        <div class="label-container">
+            <img src="../../../assets/icons/phone_enabled1.svg"class="svg" >
+            <p>شماره:</p>
+        </div>
         <input [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="number" placeholder="شماره"
             formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
         <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
@@ -40,6 +56,11 @@
         </div>
 
 
+
+        <div class="label-container">
+            <img src="../../../assets/icons/feed1.svg" class="svg">
+            <p>عنوان:</p>
+        </div>
         <input [(ngModel)]="contact.title" name="title" class="search-bar" type="title" placeholder="عنوان"
             formControlName="title" [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" />
         <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
@@ -52,6 +73,12 @@
             </div>
         </div>
 
+
+
+        <div class="label-container">
+            <img src="../../../assets/icons/home1.svg" class="svg" >
+            <p>آدرس:</p>
+        </div>
         <input [(ngModel)]="contact.address" name="address" class="search-bar" type="text" placeholder="آدرس"
             formControlName="address" [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />
         <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">

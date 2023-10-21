@@ -1,27 +1,30 @@
-<div class="header-container">
-    <h2 class="header-title">تدوین</h2>
-    <p class="header-info">در این بخش میتوانید مشخصات کاربر را تدوین کنید</p>
+<div class="head">
+    <div class="head-div">
+        <img src="../../../assets/icons/edit.svg">
+        <h2 class="head-title">تدوین</h2>
+    </div>
+    <p class="head-info">در این بخش میتوانید مشخصات کاربر را تدوین کنید</p>
 </div>
 
 <form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
     <div class="form-container ">
-        <img class="add-img" [src]="contact.photo" alt="">
+        <img class="add-img" [src]="contact.photo" >
 
 
 
-        <input [value]="contact.name" [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" placeholder="نام"
-            formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+        <input [value]="contact.name" [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" 
+            formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" >
         <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
             <div *ngIf="f['name'].errors['required']">Fullname is required</div>
             <div *ngIf="f['name'].errors['maxLength']">max is required</div>
         </div>
 
 
-        <input  [value]="contact.photo" [(ngModel)]="contact.photo" name="photo" class="search-bar " type="file" placeholder="عکس"
+        <input  [(ngModel)]="contact.photo" name="photo" class="search-bar " type="text" 
             formControlName="photo">
 
-        <input  [value]="contact.email" [(ngModel)]="contact.email" name="email" class="search-bar" type="email" placeholder="ایمیل"
-            formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        <input  [value]="contact.email" [(ngModel)]="contact.email" name="email" class="search-bar" type="email" 
+            formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" >
         <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
             <div *ngIf="f['email'].errors['required']">ایمیل وارد نشده</div>
             <div *ngIf="f['email'].errors['email']">ایمیل فرمت درست نداره</div>
@@ -29,18 +32,18 @@
         </div>
 
 
-        <input  [value]="contact.mobile" [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="number" placeholder="شماره"
-            formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
+        <input  [value]="contact.mobile" [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="number" 
+            formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" >
         <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
             <div *ngIf="f['mobile'].errors['required']">شماره وارد نشده</div>
-            <div *ngIf="f['mobile'].errors['maxLength']">
+            <div *ngIf="f['mobile'].errors['minLength']">
                 شماره یازده رقم
             </div>
         </div>
 
 
-        <input  [value]="contact.title" [(ngModel)]="contact.title" name="title" class="search-bar" type="title" placeholder="عنوان"
-            formControlName="title" [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" />
+        <input  [value]="contact.title" [(ngModel)]="contact.title" name="title" class="search-bar" type="title" 
+            formControlName="title" [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" >
         <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
             <div *ngIf="f['title'].errors['required']">Usme is required</div>
             <div *ngIf="f['title'].errors['minlength']">
@@ -51,8 +54,8 @@
             </div>
         </div>
 
-        <input  [value]="contact.address" [(ngModel)]="contact.address" name="address" class="search-bar" type="text" placeholder="آدرس"
-            formControlName="address" [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />
+        <input  [value]="contact.address" [(ngModel)]="contact.address" name="address" class="search-bar" type="text" 
+            formControlName="address" [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" >
         <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
             <div *ngIf="f['address'].errors['required']">Usme is required</div>
             <div *ngIf="f['address'].errors['minlength']">

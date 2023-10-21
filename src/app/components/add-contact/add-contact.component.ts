@@ -31,7 +31,6 @@ export class AddContactComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        photo: ['', Validators.required],
         name: ['', [Validators.required, Validators.maxLength(30)]],
         mobile: [
           '',

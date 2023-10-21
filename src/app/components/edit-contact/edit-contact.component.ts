@@ -25,22 +25,11 @@ export class EditContactComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private activatedRoute: ActivatedRoute, private contactService: ContactService, private router: Router, private formBuilder: FormBuilder) { 
+    
+  }
 
   ngOnInit(): void {
-    this.loading = true;
-    this.activatedRoute.paramMap.subscribe((param) => {
-      this.contactId = param.get('contactId');
-    });
-    if (this.contactId) {
-      this.contactService.getContact(this.contactId).subscribe((data) => {
-        this.contact = data;
-        this.loading = false;
-      }, (error) => {
-        this.errorMessage = error;
-        this.loading = false;
-      })
-    }
     this.form = this.formBuilder.group(
       {
         name: ['', [Validators.required, Validators.maxLength(30)]],
@@ -48,10 +37,10 @@ export class EditContactComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.maxLength(11)
+            Validators.minLength(11)
           ]
         ],
-        email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
+        email: ['', [Validators.required, Validators.email]],
         title: [
           '',
           [
@@ -70,13 +59,27 @@ export class EditContactComponent implements OnInit {
         ],
       }
     )
+   
+    this.loading = true;
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.contactId = param.get('contactId');
+    });
+    if (this.contactId) {
+      this.contactService.getContact(this.contactId).subscribe((data) => {
+        this.contact = data;
+        this.loading = false;
+      }, (error) => {
+        this.errorMessage = error;
+        this.loading = false;
+      })
+    };
   }
 
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
-  public updateSubmit(): void {
+ updateSubmit(): void {
     this.submitted = true;
 
     if (this.form.invalid) {
@@ -89,7 +92,6 @@ export class EditContactComponent implements OnInit {
         this.router.navigate(['/contact/edit/${this.contactId}']).then();
       });
     }
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 }
 
