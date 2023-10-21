@@ -1,25 +1,22 @@
-.nav-container {
-    width: 100%;
-    max-width: 80%;
-    height: 4rem;
-    margin: 0.7rem auto;
-    background-color: rgba(41, 91, 109, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: 1px 5px 8px rgba(36, 72, 85, 0.5);
+@import '../../../styles.scss';
 
-
+.navbar-container {
+    @include container;
+    @include flexCenter;
+    flex-direction: row;
+    height: 6rem;
+    margin: 2rem auto 3rem auto;
+    background-color: $header-color;
+    gap: $gap-md;
+    border-radius: $border-radius-md;
 }
 
-.nav-brand {
-    text-decoration: none;
-    color: black;
-    font-size: 2rem;
+.navbar-header {
+    font-size: $text-size-lg;
+    font-weight: 700;
 }
 
 .logo {
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     width: 3rem;
 }

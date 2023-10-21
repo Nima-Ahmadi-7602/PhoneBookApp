@@ -7,6 +7,15 @@
       "title": "خودم",
       "address": "پیروزی زینتی افخم پلاک 278",
       "id": 1
+    },
+    {
+      "photo": "../../../assets/nima.jpg",
+      "name": "Ahmadi Nima",
+      "email": "Nima.ahmadi.7602@gmail.com",
+      "mobile": 9375707602,
+      "title": "kjjkjkjk",
+      "address": "khiyaban piroozi kiaban zinati afkham",
+      "id": 2
     }
   ]
 }

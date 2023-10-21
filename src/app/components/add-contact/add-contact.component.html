@@ -4,9 +4,14 @@
 </div>
 <form class="add-container " [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-container ">
-        <img class="add-img" [src]="contact.photo" alt="">
+        <img class="add-img" [src]="contact.photo"   alt="">
 
 
+        <input [(ngModel)]="contact.photo" name="photo" class="search-bar " type="text" placeholder="عکس"
+            formControlName="photo"   [ngClass]="{ 'is-invalid': submitted && f['photo'].errors }" />
+            <div *ngIf="submitted && f['photo'].errors" class="invalid-feedback">
+                <div *ngIf="f['photo'].errors['required']">Fullname is required</div>
+            </div>
 
         <input [(ngModel)]="contact.name" name="name" class="search-bar name" type="text" placeholder="نام"
             formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
@@ -16,8 +21,6 @@
         </div>
 
 
-        <input [(ngModel)]="contact.photo" name="photo" class="search-bar " type="file" placeholder="عکس"
-            formControlName="photo">
 
         <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" placeholder="ایمیل"
             formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />

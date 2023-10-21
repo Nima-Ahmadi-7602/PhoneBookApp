@@ -16,6 +16,7 @@ export class AddContactComponent implements OnInit {
   public errorMessage: string | null = null;
 
   form: FormGroup = new FormGroup({
+    photo: new FormControl(''),
     name: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),
@@ -31,6 +32,7 @@ export class AddContactComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
+        photo: ['', Validators.required],
         name: ['', [Validators.required, Validators.maxLength(30)]],
         mobile: [
           '',
@@ -39,7 +41,7 @@ export class AddContactComponent implements OnInit {
             Validators.maxLength(11)
           ]
         ],
-        email: ['', [Validators.required,Validators.email]],
+        email: ['', [Validators.required, Validators.email]],
         title: [
           '',
           [
@@ -81,4 +83,7 @@ export class AddContactComponent implements OnInit {
 
     console.log(JSON.stringify(this.form.value, null, 2));
   }
-}
+
+  }
+
+  

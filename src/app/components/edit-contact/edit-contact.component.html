@@ -1,12 +1,8 @@
-<div class="container">
-    <h2 class="title">تدوین </h2>
-    <p class="info">در این بخش میتونید تدوین اضافه کنید با پر کردن اطلاعات زیر و فشردن دکمه ثبت </p>
+<div class="header-container">
+    <h2 class="header-title">تدوین</h2>
+    <p class="header-info">در این بخش میتوانید مشخصات کاربر را تدوین کنید</p>
 </div>
 
-<div class="container">
-    <h2 class="title">افزودن کاربر جدید </h2>
-    <p class="info">در این بخش میتونید کاربر جدید اضافه کنید با پر کردن اطلاعات زیر و فشردن دکمه ثبت </p>
-</div>
 <form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
     <div class="form-container ">
         <img class="add-img" [src]="contact.photo" alt="">

@@ -1,15 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color: rgb(228, 234, 235);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.2s;
-    height: 2000px;
+@import '../src/app/scss/resets';
+@import '../src/app/scss/variables';
+@import '../src/app/scss/mixins';
+@font-face {
+    font-family: 'mikhak';
+    font-weight: 500;
+    src: url('assets/fonts/mikhak-medium-webfont.woff2')format('woff2'),
+    url('assets/fonts/mikhak-medium-webfont.woff')format('woff')   
 }
-a{
-    text-decoration: none;
+@font-face {
+    font-family: 'mikhak-thin';
+    font-weight: 700;
+    src: url('assets/fonts/mikhak-thin-webfont.woff2')format('woff2'),
+    url('assets/fonts/mikhak-thin-webfont.woff')format('woff')   
 }
-li{
-    list-style: none;
+
+body {
+    background-color: $bg-color;
+}
+
+.head {
+    @include flexCenter;
+    @include container;
+    color: $white-color;
+    line-height: 0%;
+    margin-bottom: $margin-lg;
+
+    #{&}-div {
+        gap: $margin-lg;
+        display: flex;
+    }
+
+    #{&}-title {
+        font-family: 'mikhak-thin'sans-serif;
+        font-size: $text-size-lg ;
+    }
+    #{&}-info {
+        font-size: $text-size-md ;
+    }
+
 }
