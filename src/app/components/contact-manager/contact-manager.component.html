@@ -1,0 +1,75 @@
+<div class="head">
+    <div class="head-div">
+        <img src="../../../assets/icons/menu_book.svg">
+        <p class="head-title">مدیریت مخاطبین</p>
+    </div>
+    <p class="head-info">در این بخش میتوانید با استفاده از گزینه های جدید ، تدوین و حذف دفترچه تلفن خود را مدیریت کنید
+    </p>
+</div>
+
+<!-- search btn and new btn-->
+<app-search (searchTextChanged)="onsearchTextEntered($event)"></app-search>
+
+
+<!-- loading-->
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+
+<!-- error-->
+<div class="error-container" *ngIf="!loading && errorMessage">
+    <h2>{{errorMessage}}</h2>
+</div>
+
+
+<!-- contacts-->
+<div class="contact">
+    <section class="contact-cards" *ngFor="let contact of contacts">
+        <div  *ngIf="!loading && contacts.length > 0 && searchText ==='' || contact.name.toLowerCase().includes(searchText) ">
+
+            <div class="cards">
+
+                <div class="cards-image">
+                    <img class="cards-img"  [src]="contact.photo" alt="عکس کاربرها">
+                </div>
+
+                <div class="list">
+                    <div class="list-item">
+                        <img src="../../../assets/icons/badge.svg">
+                        <p>نام:<span>{{contact.name}}</span></p>
+                    </div>
+                    <div class="list-item" >
+                        <img src="../../../assets/icons/mail.svg">
+                        <p>ایمیل:<span>{{contact.email}}</span></p>
+                    </div>
+                    <div class="list-item">
+                        <img src="../../../assets/icons/phone_enabled.svg">
+                        <p>شماره:<span>{{contact.mobile}}</span></p>
+                    </div>
+            
+                </div>
+
+            </div>
+
+            <div class="button-container " (click)="clickDeleteContact(contact.id)">
+                <div class="btn-div red">
+                    <img src="../../../assets/icons/block.svg" alt="">
+                    <a class="delete-btn">حذف</a>
+                </div>
+                <div class="btn-div  brown" routerLink="/contact/edit/{{contact.id}}">
+                    <img src="../../../assets/icons/edit.svg" alt="">
+                    <a class="edit-btn" routerLink="/contact/edit/{{contact.id}}">تدوین</a>
+                </div>
+                <div class="btn-div green " routerLink="/contact/view/{{contact.id}}">
+                    <img src="../../../assets/icons/search.svg" alt="">
+                    <a class="view-bt" routerLink="/contact/view/{{contact.id}}">مشاهده</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+<a href="/contact/add" class="new-btn">+افزودن مخاطب جدید</a>

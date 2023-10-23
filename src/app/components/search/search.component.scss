@@ -1,0 +1,30 @@
+@import '../../../styles.scss';
+
+.search{
+  @include flexCenter;
+  flex-direction: row;
+  gap: $gap-half;
+
+  #{&}-icon {
+    position: relative;
+    right: 3rem;
+  }
+  #{&}-bar {
+    font-size: $text-size-one-half;
+    border-radius: $border-radius-md;
+    border-style: none;
+    padding: 0 3rem;
+    width: 50rem;
+    height: 4rem;
+    color: $text-color;
+    transition: all 0.4s;
+
+    &:focus {
+      width: 58rem;
+    }
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+}

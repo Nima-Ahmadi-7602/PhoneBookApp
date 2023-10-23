@@ -1,0 +1,42 @@
+<div class="head">
+    <div class="head-div">
+        <img src="../../../assets/icons/menu_book.svg">
+        <h2 class="head-title">مشخصات کامل کاربر</h2>
+    </div>
+    <p class="head-info">در صورت صحیح نبودن اطلاعات کاربر میتوانید از قسمت منو و بعد تدوین این مشگل رو برطرف کنید</p>
+</div>
+
+
+
+<div class="info-container" *ngIf="!loading  && isNotEmpty()">
+    <div class="cardimage-container">
+        <img class="cards-img" [src]="contact.photo" alt="">
+    </div>
+    <div class="view-info">
+        <div class="item">
+            <img src="../../../assets/icons/badge.svg">
+            <p>اسم:<span>{{contact.name}}</span></p>
+        </div>
+        <div class="item">
+            <img src="../../../assets/icons/mail.svg">
+            <p>ایمیل:<span>{{contact.email}}</span></p>
+        </div>
+        <div class="item">
+            <img src="../../../assets/icons/phone_enabled.svg">
+            <p>شماره:<span>{{contact.mobile}}</span></p>
+        </div>
+        <div class="item">
+            <img src="../../../assets/icons/phone_enabled.svg">
+            <p>شماره دوم:<span>{{contact.mobiletwo}}</span></p>
+        </div>
+        <div class="item">
+            <img src="../../../assets/icons/phone_enabled.svg">
+            <p>عنوان:<span>{{contact.title}}</span></p>
+        </div>
+        <div class="item">
+            <img src="../../../assets/icons/phone_enabled.svg">
+            <p>ادرس:<span>{{contact.address}}</span></p>
+        </div>
+    </div>
+</div>
+<a routerLink="/" class="back-btn">بازگشت</a>

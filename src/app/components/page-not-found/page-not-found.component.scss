@@ -1,0 +1,9 @@
+@import '../../../styles.scss';
+
+.pnf-container {
+    @include flexCenter;
+}
+
+.page-alert {
+    font-size: 5rem;
+}

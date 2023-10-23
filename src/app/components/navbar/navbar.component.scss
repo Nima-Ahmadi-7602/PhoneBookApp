@@ -1,0 +1,21 @@
+@import '../../../styles.scss';
+
+.navbar-container {
+    @include container;
+    @include flexCenter;
+    flex-direction: row;
+    height: 6rem;
+    margin: 2rem auto 3rem auto;
+    background-color: $header-color;
+    gap: $gap-one-half;
+    border-radius: $border-radius-md;
+}
+
+.navbar-header {
+    font-size: $text-size-two-half;
+    font-weight: bold;
+}
+
+.logo {
+    width: $img-width-logo;
+}

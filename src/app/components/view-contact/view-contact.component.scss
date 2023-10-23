@@ -1,0 +1,56 @@
+@import '../../../styles.scss';
+
+span {
+    margin-right: $gap-half;
+}
+
+.info-container {
+    @include flexCenter;
+    width: 100%;
+    max-width: 60%;
+    flex-direction: row;
+    background-color: $card-color;
+    border-radius: $border-radius-md;
+    margin: 2.5rem auto;
+}
+
+.cards-img {
+    margin: 1rem 1rem 0.2rem 0.5rem;
+    width: 24rem;
+    border-radius: $border-radius-sm;
+    object-fit: contain;
+}
+
+.view-info {
+    width:  100%;
+    margin: 1rem 0.5rem 0.2rem 2rem;
+}
+
+.item {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: $white-color;
+    border-radius: $border-radius-sm;
+    margin-bottom: $gap-half;
+    gap: $gap-half;
+    padding: 0 0.8rem;
+}
+
+
+.back-btn {
+    @include flexCenter;
+    max-width: 20%;
+    background-color: $btn-color;
+    font-size: $text-size-two;
+    font-weight: 800;
+    height: 4rem;
+    border-radius: $border-radius-md;
+    transition: all 0.5;
+
+    &:hover {
+        box-shadow:$box-shadow;
+    }
+}

@@ -1,0 +1,120 @@
+<div class="head">
+    <div class="head-div">
+        <img src="../../../assets/icons/edit1.svg">
+        <h2 class="head-title">تدوین</h2>
+    </div>
+    <p class="head-info">در این بخش میتوانید مشخصات کاربر را تدوین کنید</p>
+</div>
+
+
+
+
+
+<form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
+    <div class="form-container ">
+        
+        <div class="image-upload-container">
+            <img class="add-img" [src]="contact.photo">
+            <input [(ngModel)]="contact.photo" name="photo" class="file-input" type="file" formControlName="photo"
+                id="photo" (change)="imgUpload($event)" accept="jpg png"
+                [ngClass]="{ 'is-invalid': submitted && f['photo'].errors }" />
+            <label for="photo">بارگذاری فایل</label>
+            <div *ngIf="submitted && f['photo'].errors" class="is-invalid-second">
+            </div>
+        </div>
+
+
+        <div class="label">
+            <img src="../../../assets/icons/badge1.svg" class="label-svg">
+            <p>نام:</p>
+        </div>
+        <input [(ngModel)]="contact.name" name="name" class="search-bar" type="text" formControlName="name"
+            placeholder="نام را وارد کنید " [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+        <div *ngIf="submitted && f['name'].errors" class="is-invalid-second">
+            <div *ngIf="f['name'].errors['required']"> نام را وارد نکردید </div>
+            <div *ngIf="f['name'].errors['maxLength']">اسم طولانی است </div>
+        </div>
+
+
+
+        <div class="label">
+            <img src="../../../assets/icons/mail1.svg" class="label-svg">
+            <p>ایمیل:</p>
+        </div>
+        <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" formControlName="email"
+            placeholder="ایمیل با فرمت درست وارد شود (example@google.com)"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        <div *ngIf="submitted && f['email'].errors" class="is-invalid-second">
+            <div *ngIf="f['email'].errors['required']">ایمیل وارد نشده</div>
+            <div *ngIf="f['email'].errors['email']">ایمیل فرمت درست نداره</div>
+        </div>
+
+
+
+
+        <div class="label">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="label-svg">
+            <p>شماره:</p>
+        </div>
+        <input [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="text" formControlName="mobile"
+            placeholder="شماره تلفن یازده رقم باید باشد..."
+            [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
+        <div *ngIf="submitted && f['mobile'].errors" class="is-invalid-second">
+            <div *ngIf="f['mobile'].errors['required']">شماره وارد نشده</div>
+            <div *ngIf="f['mobile'].errors['pattern']">
+                شماره یازده رقم نیست
+            </div>
+        </div>
+        
+        <div class="label">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="label-svg">
+            <p>شماره دوم:</p>
+        </div>
+        <input  [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
+            placeholder="شماره تلفن یازده رقم باید باشد..."
+            [ngClass]="{ 'is-invalid': submitted && f['mobiletwo'].errors }" />
+        <div *ngIf="submitted && f['mobiletwo'].errors" class="is-invalid-second">
+            <div *ngIf="f['mobiletwo'].errors['pattern']">
+                شماره یازده رقم نیست
+            </div>
+        </div>
+
+
+
+
+        <div class="label">
+            <img src="../../../assets/icons/feed1.svg" class="label-svg">
+            <p>عنوان:</p>
+        </div>
+        <input [(ngModel)]="contact.title" name="title" class="search-bar" type="title" formControlName="title"
+            placeholder="عنوان فرد مثلا(دوست، همکار ، تعمیرکار یا نام مستعار فرد)"
+            [ngClass]="{ 'is-invalid': submitted && f['title'].errors }" />
+        <div *ngIf="submitted && f['title'].errors" class="is-invalid-second">
+            <div *ngIf="f['title'].errors['maxlength']">
+                عنوان طولانی است
+            </div>
+        </div>
+
+
+
+        <div class="label">
+            <img src="../../../assets/icons/home1.svg" class="label-svg">
+            <p>آدرس:</p>
+        </div>
+        <input [(ngModel)]="contact.address" name="address" class="search-bar" type="text" formControlName="address"
+            placeholder="آدرس  را وارد کنید " [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />
+        <div *ngIf="submitted && f['address'].errors" class="is-invalid-second">
+            <div *ngIf="f['address'].errors['minlength']">
+                آدرس کوتاه است
+            </div>
+            <div *ngIf="f['address'].errors['maxlength']">
+                آدرس طولانی است
+            </div>
+        </div>
+        <br>
+        <div class="btn">
+                <button class="btn-submit" type="submit">ثبت</button>
+                <button routerLink="/" class="btn-back">بارگشت</button>
+        </div>
+    </div>
+</form>

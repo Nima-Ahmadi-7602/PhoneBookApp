@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../src/app/scss/resets';
+@import '../src/app/scss/variables';
+@import '../src/app/scss/mixins';
+
+body {
+    height: 120vh;
+    background-color: $bg-color;
+}
+
+a {
+    color: $text-color;
+}
+
+.head {
+    @include flexCenter;
+    @include container;
+    flex-direction: column;
+    color: $white-color;
+    line-height: 0;
+    margin-bottom: $margin-lg;
+
+    #{&}-div {
+        gap: $margin-lg;
+        display: flex;
+    }
+
+    #{&}-title {
+        font-size: $text-size-two ;
+    }
+    
+    #{&}-info {
+
+        font-size: $text-size-one-half ;
+    }
+
+}
