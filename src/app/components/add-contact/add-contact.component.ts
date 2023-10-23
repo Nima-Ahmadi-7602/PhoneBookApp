@@ -22,6 +22,7 @@ export class AddContactComponent implements OnInit {
     name: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),
+    mobiletwo: new FormControl(''),
     title: new FormControl(''),
     address: new FormControl(''),
   });
@@ -42,6 +43,12 @@ export class AddContactComponent implements OnInit {
           '',
           [
             Validators.required,
+            Validators.pattern("[0-9 ]{11}")
+          ]
+        ],
+        mobiletwo: [
+          '',
+          [
             Validators.pattern("[0-9 ]{11}")
           ]
         ],

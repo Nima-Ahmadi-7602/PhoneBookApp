@@ -4,6 +4,7 @@ export interface IContact {
     name: string;
     email: string;
     mobile:number;
+    mobiletwo:string;
     address:string;
     title: string;
     

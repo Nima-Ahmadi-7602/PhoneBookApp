@@ -10,6 +10,8 @@
 
 <form class="add-container " [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-container ">
+
+        
         <div class="image-upload-container">
             <img class="add-img" [src]="contact.photo">
             <input [(ngModel)]="contact.photo" name="photo" class="file-input" type="file" formControlName="photo"
@@ -61,7 +63,19 @@
             <div *ngIf="f['mobile'].errors['pattern']">
                 شماره یازده رقم نیست
             </div>
-
+        </div>
+        
+        <div class="label-container">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="svg">
+            <p>شماره دوم:</p>
+        </div>
+        <input [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
+            placeholder="شماره تلفن یازده رقم باید باشد..."
+            [ngClass]="{ 'is-invalid': submitted && f['mobiletwo'].errors }" />
+        <div *ngIf="submitted && f['mobiletwo'].errors" class="is-invalid-second">
+            <div *ngIf="f['mobiletwo'].errors['pattern']">
+                شماره یازده رقم نیست
+            </div>
         </div>
 
 
