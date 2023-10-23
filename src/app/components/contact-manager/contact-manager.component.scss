@@ -5,11 +5,13 @@
 }
 
 .contact {
-    @include container;
+    width: 80%;
     display: grid;
-    grid-template-columns:  1fr 1fr ;
+    grid-template-columns:  repeat(auto-fit,40rem) ;
     gap: $gap-three ;
     margin: 3rem auto;
+    justify-content: center;
+    align-items: center;
     #{&}-cards {
         background-color: $card-color;
         border-radius: $border-radius-md;

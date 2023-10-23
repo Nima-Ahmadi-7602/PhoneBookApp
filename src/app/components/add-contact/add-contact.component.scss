@@ -1,18 +1,30 @@
 @import '../../../styles.scss';
 
-.label-container {
-    margin-top: 0.5rem;
-    gap: 0.5rem;
-    display: flex;
-    align-items: center;
+.add-container {
+    @include flexCenter;
+    @include container;
+    margin: 0 auto;
+
 }
 
-.svg {
-    width: 1.5rem;
+.form-container {
+    width: 100%;
+    max-width: 35%;
+}
+
+.label {
+    margin-top: $gap-half;
+    gap: $gap-half;
+    display: flex;
+    align-items: center;
+
+    #{&}-svg {
+        width: $svg-width-one-half;
+    }
 }
 
 .header-svg {
-    width: 2.5rem;
+    width: $svg-width-two-half;
 }
 
 p {
@@ -21,59 +33,37 @@ p {
     color: white;
 }
 
-.add-container {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.form-container {
-    width: 100%;
-    max-width: 35%;
-
-}
-
 .search-bar {
     width: 100%;
     border-radius: $border-radius-md;
     height: 3rem;
     padding: 0 1rem 0 0;
-    font-size: 1.2rem;
+    font-size: $text-size-one;
     font-weight: 700;
 }
 
-.btn-container {
-    width: 100%;
-    max-width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+.btn {
+    @include flexCenter;
+    gap: $gap-two;
     margin: 2rem auto;
 
-}
+    #{&}-submit {
+        font-weight: 600;
+        font-size: $text-size-one-half;
+        width: 15rem;
+        background-color: $green-color;
+        height: 4rem;
+        border-radius: $border-radius-md;
+    }
 
-.submit-btn {
-    font-weight: 600;
-    font-size: 1.2rem;
-    width: 15rem;
-    background-color: $green-color;
-    height: 4rem;
-    border-radius: $border-radius-md;
-
-}
-
-.back-btn {
-    font-weight: 600;
-    font-size: 1.2rem;
-    width: 15rem;
-    height: 4rem;
-    border-radius: $border-radius-md;
-    background-color: $header-color ;
+    #{&}-back {
+        font-weight: 600;
+        font-size: $text-size-one-half;
+        width: 15rem;
+        height: 4rem;
+        border-radius: $border-radius-md;
+        background-color: $header-color ;
+    }
 }
 
 .is-invalid {
@@ -86,23 +76,21 @@ p {
 .is-invalid-second {
     color: $red-color ;
     margin: 0.5rem 0;
-
 }
 
-
-.image-upload-container{
-    display: flex;
+.image-upload-container {
+    @include flexCenter;
     flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
+    gap: $gap-two;
+
 
 }
 
 .file-input {
     display: none;
 }
-.add-img{
+
+.add-img {
     width: 15rem;
     border-radius: $border-radius-md ;
 }
@@ -112,7 +100,7 @@ label {
     height: 2rem;
     width: 8rem;
     font-weight: 700;
-    color: white;
-    border: 1px white dashed;
+    color: $white-color;
+    border: 1px $white-color dashed;
     border-radius: $border-radius-md ;
 }

@@ -12,6 +12,7 @@
 
 <form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
     <div class="form-container ">
+        
         <div class="image-upload-container">
             <img class="add-img" [src]="contact.photo">
             <input [(ngModel)]="contact.photo" name="photo" class="file-input" type="file" formControlName="photo"
@@ -23,8 +24,8 @@
         </div>
 
 
-        <div class="label-container">
-            <img src="../../../assets/icons/badge1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/badge1.svg" class="label-svg">
             <p>نام:</p>
         </div>
         <input [(ngModel)]="contact.name" name="name" class="search-bar" type="text" formControlName="name"
@@ -36,8 +37,8 @@
 
 
 
-        <div class="label-container">
-            <img src="../../../assets/icons/mail1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/mail1.svg" class="label-svg">
             <p>ایمیل:</p>
         </div>
         <input [(ngModel)]="contact.email" name="email" class="search-bar" type="email" formControlName="email"
@@ -51,8 +52,8 @@
 
 
 
-        <div class="label-container">
-            <img src="../../../assets/icons/phone_enabled1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="label-svg">
             <p>شماره:</p>
         </div>
         <input [(ngModel)]="contact.mobile" name="mobile" class="search-bar" type="text" formControlName="mobile"
@@ -65,11 +66,11 @@
             </div>
         </div>
         
-        <div class="label-container">
-            <img src="../../../assets/icons/phone_enabled1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/phone_enabled1.svg" class="label-svg">
             <p>شماره دوم:</p>
         </div>
-        <input [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
+        <input  [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
             placeholder="شماره تلفن یازده رقم باید باشد..."
             [ngClass]="{ 'is-invalid': submitted && f['mobiletwo'].errors }" />
         <div *ngIf="submitted && f['mobiletwo'].errors" class="is-invalid-second">
@@ -81,8 +82,8 @@
 
 
 
-        <div class="label-container">
-            <img src="../../../assets/icons/feed1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/feed1.svg" class="label-svg">
             <p>عنوان:</p>
         </div>
         <input [(ngModel)]="contact.title" name="title" class="search-bar" type="title" formControlName="title"
@@ -96,8 +97,8 @@
 
 
 
-        <div class="label-container">
-            <img src="../../../assets/icons/home1.svg" class="svg">
+        <div class="label">
+            <img src="../../../assets/icons/home1.svg" class="label-svg">
             <p>آدرس:</p>
         </div>
         <input [(ngModel)]="contact.address" name="address" class="search-bar" type="text" formControlName="address"
@@ -111,13 +112,9 @@
             </div>
         </div>
         <br>
-        <div class="btn-container">
-            <div class="btn-align">
-                <button class="submit-btn" type="submit">ثبت</button>
-            </div>
-            <div class="btn-align">
-                <button routerLink="/" class="back-btn">بارگشت</button>
-            </div>
+        <div class="btn">
+                <button class="btn-submit" type="submit">ثبت</button>
+                <button routerLink="/" class="btn-back">بارگشت</button>
         </div>
     </div>
 </form>
