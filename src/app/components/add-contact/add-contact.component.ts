@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +16,9 @@ export class AddContactComponent implements OnInit {
   public contact: IContact = {} as IContact;
   public errorMessage: string | null = null;
 
+
   form: FormGroup = new FormGroup({
+    photo: new FormControl(''),
     name: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),
@@ -24,13 +27,16 @@ export class AddContactComponent implements OnInit {
   });
 
   submitted = false;
-  constructor(private contactService: ContactService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private contactService: ContactService, private router: Router, private formBuilder: FormBuilder, private httpClient: HttpClient) {
 
   }
 
   ngOnInit(): void {
+    this.contact.photo = this.dfimage;
+
     this.form = this.formBuilder.group(
       {
+        photo: ['', []],
         name: ['', [Validators.required, Validators.maxLength(30)]],
         mobile: [
           '',
@@ -39,7 +45,7 @@ export class AddContactComponent implements OnInit {
             Validators.pattern("[0-9 ]{11}")
           ]
         ],
-        email: ['', [Validators.required, Validators.email]],
+        email: ['', [Validators.email]],
         title: [
           '',
           [
@@ -75,10 +81,21 @@ export class AddContactComponent implements OnInit {
       })
 
     }
+   
+   
 
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
-  }
+  dfimage = '../../../assets/avatar.jpg';
+  imgUpload(e: any) {
+    if (e.target.files && e.target.files[0]) {
+      var reader = new FileReader();
 
-  
+      reader.onload = (e: any) => {
+        this.contact.photo = e.target.result;
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  }
+}
+

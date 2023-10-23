@@ -17,6 +17,7 @@ export class EditContactComponent implements OnInit {
 
 
   form: FormGroup = new FormGroup({
+    photo: new FormControl(''),
     name: new FormControl(''),
     email: new FormControl(''),
     mobile: new FormControl(''),
@@ -32,27 +33,26 @@ export class EditContactComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
+        photo: ['', []],
+
         name: ['', [Validators.required, Validators.maxLength(30)]],
         mobile: [
           '',
           [
             Validators.required,
-            Validators.minLength(11)
+            Validators.pattern("[0-9 ]{11}")
           ]
         ],
-        email: ['', [Validators.required, Validators.email]],
+        email: ['', [ Validators.email]],
         title: [
           '',
           [
-            Validators.required,
-            Validators.minLength(3),
             Validators.maxLength(30)
           ]
         ],
         address: [
           '',
           [
-            Validators.required,
             Validators.minLength(6),
             Validators.maxLength(50)
           ]
@@ -92,6 +92,16 @@ export class EditContactComponent implements OnInit {
         this.router.navigate(['/contact/edit/${this.contactId}']).then();
       });
     }
+  }
+  imgUpload(e: any) {
+    if (e.target.files && e.target.files[0]) {
+      var reader = new FileReader();
+    
+      reader.onload = (e: any) => {
+        this.contact.photo = e.target.result;
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  }
   }
 }
 

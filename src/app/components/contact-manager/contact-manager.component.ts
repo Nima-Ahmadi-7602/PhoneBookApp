@@ -43,4 +43,5 @@ export class ContactManagerComponent implements OnInit {
   onsearchTextEntered(searchValue: string) {
     this.searchText = searchValue 
   }
+  
 }

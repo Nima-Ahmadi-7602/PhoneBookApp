@@ -34,13 +34,14 @@ p {
 .form-container {
     width: 100%;
     max-width: 35%;
+
 }
 
 .search-bar {
     width: 100%;
     border-radius: $border-radius-md;
     height: 3rem;
-    padding: 0 1rem;
+    padding: 0 1rem 0 0;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -76,7 +77,42 @@ p {
 }
 
 .is-invalid {
-    color: $red-color;
+    border: 3PX solid $red-color;
+    color: $red-color ;
     margin: 0.5rem 0;
 
+}
+
+.is-invalid-second {
+    color: $red-color ;
+    margin: 0.5rem 0;
+
+}
+
+
+.image-upload-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.file-input {
+    display: none;
+}
+.add-img{
+    width: 15rem;
+    border-radius: $border-radius-md ;
+}
+
+label {
+    padding: 1rem 3rem 0.5rem 0rem;
+    height: 2rem;
+    width: 8rem;
+    font-weight: 700;
+    color: white;
+    border: 1px white dashed;
+    border-radius: $border-radius-md ;
 }

@@ -12,8 +12,11 @@
 
 <form class="add-container " [formGroup]="form" (ngSubmit)="updateSubmit()">
     <div class="form-container ">
-        <img class="add-img" [src]="contact.photo">
-        <input [(ngModel)]="contact.photo" name="photo" class="search-bar" type="text" formControlName="photo" />
+        <img class="add-img" [src]="contact.photo" >      
+        <input [(ngModel)]="contact.photo" name="photo" class="search-bar" type="file" formControlName="photo" (change)="imgUpload($event)" accept="jpg png"
+           [ngClass]="{ 'is-invalid': submitted && f['photo'].errors }" />
+       <div *ngIf="submitted && f['photo'].errors" class="is-invalid-second">
+       </div> 
 
 
 
