@@ -4,28 +4,27 @@
     @include flexCenter;
 }
 
-.contact-containers {
-    width: 70%;
+.contact {
+    @include container;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-around;
-    gap: 3rem;
+    grid-template-columns:  1fr 1fr ;
+    gap: $gap-three ;
     margin: 3rem auto;
+    #{&}-cards {
+        background-color: $card-color;
+        border-radius: $border-radius-md;
+    }
 }
 
-.cards-container {
-    background-color: $card-color;
-    border-radius: $border-radius-md;
-    height: 15.5rem;
+.cards {
+    @include flexCenter;
+    gap: $gap-one;
+    #{&}-image {
+        width: 12rem;
+        height: 10rem;
+        padding: 0.5rem 1rem 0 0;
+    }
 }
-
-.cardimage-container {
-    width: 10rem;
-    height: 10rem;
-    margin: 0.5rem 1rem 0 0;
-
-}
-
 .cards-img {
     border-radius: $border-radius-sm;
     width: 100%;
@@ -34,83 +33,64 @@
 }
 
 span {
-    margin-right: 0.5rem;
+    margin-right: $gap-half;
 }
 
-.info-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.cards-list {
+.list {
     width: 100%;
     margin: 1rem 0rem 0 1rem;
-
-}
-
-.item {
-    font-size: 0.9rem;
-    font-weight: 700;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: white;
-    border-radius: $border-radius-sm;
-    margin-bottom: 0.5rem;
-    padding: 0 0.5rem;
+    #{&}-item {
+        font-size: $text-size-one;
+        font-weight: 900;
+        display: flex;
+        background-color: white;
+        border-radius: $border-radius-sm;
+        margin-bottom: 0.5rem;
+        gap: 0.2rem;
+        padding: 0 0.5rem;
+    }
 }
 
 .button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   @include flexCenter;
     column-gap: 1.5rem;
     margin: 0.5rem 0.8rem 1rem 0.8rem;
 }
 
+.btn-div {
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+    border-radius: $border-radius-sm ;
+    display: flex;
+    gap: $gap-half;
+    cursor: pointer;
+    justify-content: center;
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+}
 .green {
     background-color: $green-color;
-
 }
 
 .red {
     background-color: $red-color;
-
 }
 
 .brown {
     background-color: $btn-color ;
 }
 
-.btn-div {
-    &:hover {
-        box-shadow: 0px 2px 10px 5px rgba(0, 183, 255, 0.3);
-    }
-
-    font-weight: 700;
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    border-radius: $border-radius-sm ;
-    display: flex;
-    gap: 0.4rem;
-    justify-content: center;
-
-}
-
 .new-btn {
     @include flexCenter;
-    max-width: 70%;
+    width: 70%;
     background-color: $btn-color;
-    font-size: 2rem;
+    font-size: $text-size-two;
     font-weight: 800;
     height: 4rem;
     border-radius: $border-radius-md;
     transition: all 0.5;
-
     &:hover {
-        box-shadow: 0px 2px 10px 5px rgba(0, 183, 255, 0.3);
+        box-shadow: $box-shadow;
     }
-
 }

@@ -1,36 +1,30 @@
 @import '../../../styles.scss';
 
-.search-container {
+.search{
   @include flexCenter;
   flex-direction: row;
-  gap: $gap-xsm;
+  gap: $gap-half;
 
-}
-
-.search-bar {
-  font-size: 1.3rem;
-  border-radius: $border-radius-md;
-  border-style: none;
-  padding: 0 3rem;
-  width: 50rem;
-  height: 4rem;
-  color: $text-color;
-  transition: all 0.5s;
-
-  &:focus {
-    width: 58rem;
+  #{&}-icon {
+    position: relative;
+    right: 3rem;
   }
-
-  &::placeholder {
+  #{&}-bar {
+    font-size: $text-size-one-half;
+    border-radius: $border-radius-md;
+    border-style: none;
+    padding: 0 3rem;
+    width: 50rem;
+    height: 4rem;
     color: $text-color;
-    opacity: 1;
+    transition: all 0.4s;
+
+    &:focus {
+      width: 58rem;
+    }
+
+    &::placeholder {
+      color: $text-color;
+    }
   }
-
-
-}
-
-.search-icon {
-  position: relative;
-  right: 50px;
-
 }

@@ -1,21 +1,22 @@
-
-*{
-    font-family: 'mikhak', sans-serif;
+* {
     outline: 0;
+    font-family: 'lattef' , sans-serif;
+    font-weight: 900;
+
 }
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border-style: none;
-    transition: all 0.2s;
     direction: rtl;
 }
 
+
 a {
-    font-family: 'mikhak', sans-serif;
+    cursor: pointer;
     text-decoration: none;
-    color: black;
 }
 
 li {

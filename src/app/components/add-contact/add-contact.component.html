@@ -69,7 +69,7 @@
             <img src="../../../assets/icons/phone_enabled1.svg" class="svg">
             <p>شماره دوم:</p>
         </div>
-        <input [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
+        <input  [(ngModel)]="contact.mobiletwo" name="mobiletwo" class="search-bar" type="text" formControlName="mobiletwo"
             placeholder="شماره تلفن یازده رقم باید باشد..."
             [ngClass]="{ 'is-invalid': submitted && f['mobiletwo'].errors }" />
         <div *ngIf="submitted && f['mobiletwo'].errors" class="is-invalid-second">

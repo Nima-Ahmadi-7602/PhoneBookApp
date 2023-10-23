@@ -7,16 +7,15 @@
     height: 6rem;
     margin: 2rem auto 3rem auto;
     background-color: $header-color;
-    gap: $gap-md;
+    gap: $gap-one-half;
     border-radius: $border-radius-md;
 }
 
 .navbar-header {
-    font-size: $text-size-lg;
-    font-weight: 700;
+    font-size: $text-size-two-half;
+    font-weight: bold;
 }
 
 .logo {
-    margin-left: 0.5rem;
-    width: 3rem;
+    width: $img-width-logo;
 }

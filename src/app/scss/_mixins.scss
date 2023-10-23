@@ -2,12 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 0px auto;
 }
 
 @mixin container{
-    width: 100%;
     max-width: 80%;
 }
 

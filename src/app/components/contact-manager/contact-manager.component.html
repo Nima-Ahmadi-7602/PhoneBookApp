@@ -1,7 +1,7 @@
 <div class="head">
     <div class="head-div">
         <img src="../../../assets/icons/menu_book.svg">
-        <h2 class="head-title">مدیریت مخاطبین</h2>
+        <p class="head-title">مدیریت مخاطبین</p>
     </div>
     <p class="head-info">در این بخش میتوانید با استفاده از گزینه های جدید ، تدوین و حذف دفترچه تلفن خود را مدیریت کنید
     </p>
@@ -25,26 +25,26 @@
 
 
 <!-- contacts-->
-<div class="contact-containers">
-    <section  *ngFor="let contact of contacts">
-        <div class="cards-container" *ngIf="!loading && contacts.length > 0 && searchText ==='' || contact.name.toLowerCase().includes(searchText) ">
+<div class="contact">
+    <section class="contact-cards" *ngFor="let contact of contacts">
+        <div  *ngIf="!loading && contacts.length > 0 && searchText ==='' || contact.name.toLowerCase().includes(searchText) ">
 
-            <div class="info-container">
+            <div class="cards">
 
-                <div class="cardimage-container">
+                <div class="cards-image">
                     <img class="cards-img"  [src]="contact.photo" alt="عکس کاربرها">
                 </div>
 
-                <div class="cards-list">
-                    <div class="item">
+                <div class="list">
+                    <div class="list-item">
                         <img src="../../../assets/icons/badge.svg">
                         <p>نام:<span>{{contact.name}}</span></p>
                     </div>
-                    <div class="item" >
+                    <div class="list-item" >
                         <img src="../../../assets/icons/mail.svg">
                         <p>ایمیل:<span>{{contact.email}}</span></p>
                     </div>
-                    <div class="item">
+                    <div class="list-item">
                         <img src="../../../assets/icons/phone_enabled.svg">
                         <p>شماره:<span>{{contact.mobile}}</span></p>
                     </div>
